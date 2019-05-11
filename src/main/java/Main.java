@@ -88,7 +88,7 @@ public class Main {
 
         //Wyświetl wszystkie imiona z listy w formacie „indeks listy: imię” np. 3: Marta.
 
-        listOfNames.forEach(name-> System.out.println(listOfNames.indexOf(name)+": "+name));
+        listOfNames.forEach(name -> System.out.println(listOfNames.indexOf(name) + ": " + name));
 
         //Usuń z listy pierwszy element i go wyświetl.
 
@@ -123,7 +123,37 @@ public class Main {
 
         Set<String> setOfNames = new HashSet<>(Arrays.asList("Marek", "Aleksandra", "Marta", "Jakub", "Bartosz"));
 
-        
+//Dodaj jeszcze raz imię Marek i wyświetl wszystkie elementy.
+        setOfNames.add("Marek");
+        System.out.println(setOfNames);
+//Utwórz nową HashMape i uzupełnij ją wartościami (1, Niebieski)(2, Zielony)(3, Czerwony).
+        Map<Integer, String> mapOfColors = new HashMap<>();
+        mapOfColors.put(1,"Niebieski");
+        mapOfColors.put(2, "Zielony");
+        mapOfColors.put(3,"Czerwony");
+//Wyświetl wszystkie kolory.
+        System.out.println(mapOfColors.values());
+//Wyświetl wszystkie identyfikatory kolorów.
+        System.out.println(mapOfColors.keySet());
+//Dodaj nowy kolor do mapy za pomocą odpowiedniej metody.
+        mapOfColors.put(4, "Purple");
+//Wyświetl kolor, który znajdziemy pod id 2.
+        System.out.println(mapOfColors.get(2));
+//Wyświetl id, które odpowiada za kolor niebieski.
+
+        mapOfColors.entrySet().stream()
+                .filter(keyAndValue-> keyAndValue.getValue().equalsIgnoreCase("Niebieski"))
+                .forEach(keyAndValue-> System.out.println(keyAndValue.getKey()));
+
+//Usuń kolor o identyfikatorze 2 z mapy.
+        mapOfColors.remove(2);
+// 40 Usuń kolor czerwony z mapy.
+
+//        mapOfColors.entrySet().stream()
+//                .filter(keyAndValue-> keyAndValue.getValue().equalsIgnoreCase("Czerwony"))
+//                .forEach(keyAndValue->mapOfColors.remove(keyAndValue.getKey()));
+
+        mapOfColors.entrySet().removeIf(keyAndValue->keyAndValue.getValue().equalsIgnoreCase("czerwony"));
 
     }
 
