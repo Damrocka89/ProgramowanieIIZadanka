@@ -107,10 +107,23 @@ public class Main {
         listOfNames.sort(Comparator.reverseOrder());
 
         //Sprawdź czy lista jest pusta i wyświetl tę informację.
+
+        System.out.println(listOfNames.isEmpty());
+
         //Wyczyść listę i wyświetl jej zawartość.
+
+        listOfNames.clear();
+        System.out.println(listOfNames);
+
         //Ponownie sprawdź czy lista jest pusta.
+
+        System.out.println(listOfNames.isEmpty());
+
         // 30 .Stwórz Set imion, i dodaj do niego 5 elementów (Marek, Aleksandra, Marta, Jakub, Bartosz).
 
+        Set<String> setOfNames = new HashSet<>(Arrays.asList("Marek", "Aleksandra", "Marta", "Jakub", "Bartosz"));
+
+        
 
     }
 
